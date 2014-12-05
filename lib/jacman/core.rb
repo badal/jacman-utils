@@ -23,10 +23,8 @@ require 'net/smtp'
 require 'j2r/jaccess'
 require 'j2r/core'
 
-# local config
-require_relative 'config.rb'
-
-require_relative('core/utils/file_utilities.rb')
+# FIXME: future Utils gem
+require_relative('utils.rb')
 
 # script methods for Jacinthe Management
 module JacintheManagement
@@ -43,7 +41,6 @@ module JacintheManagement
     # paths
     # # free access directory
     SQL_DUMP_DIR = Conf.config['paths']['dump']
-    Utils.make_dir_if_necessary(SQL_DUMP_DIR)
     # top path
     SMF_SERVEUR = Conf.config['paths']['server']
     # second level paths
@@ -60,13 +57,9 @@ module JacintheManagement
   end
 end
 
-require_relative('core/version.rb')
 
-require_relative('core/utils/sql.rb')
-require_relative('core/utils/sql_tools.rb')
-require_relative('core/utils/sql_script_file.rb')
-require_relative('core/utils/sylk2csv.rb')
-require_relative('core/utils/win_file.rb')
+
+require_relative('core/version.rb')
 
 require_relative('core/components/aspaway_importer.rb')
 require_relative('core/components/catalog.rb')

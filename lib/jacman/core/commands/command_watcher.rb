@@ -10,6 +10,15 @@ module JacintheManagement
   module Core
     # methods for checking cronman report files
     class CommandWatcher
+      HOUR = 60 * 60
+
+      # @return [Numeric|nil] age of file in hours | nil if file does not exist
+      # @param [Path] file path of file
+      def self.age(file)
+        return nil unless File.exist?(file)
+        (Time.now - File.mtime(file)) / HOUR
+      end
+
       # For use in command line or in web_service
       #
       # @example ruby command_watcher.rb gi,ge,de
@@ -31,8 +40,8 @@ module JacintheManagement
 
       # @return [[nil|Integer, nil|String]] age to report, file to show
       def check_files
-        stdout_age = Utils.age(@stdout_file)
-        stderr_age = Utils.age(@stderr_file)
+        stdout_age = CommandWatcher.age(@stdout_file)
+        stderr_age = CommandWatcher.age(@stderr_file)
         if stderr_age && stderr_age < (stdout_age || 0) + 0.1
           [nil, @stderr_file]
         else

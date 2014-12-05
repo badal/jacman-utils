@@ -129,7 +129,7 @@ module JacintheManagement
 
       # show remaining sales in editor
       def self.show_remaining_sales
-        Utils.open_in_editor(REMAINING_SALES_FILE)
+        JacintheManagement::Utils.open_in_editor(REMAINING_SALES_FILE)
       end
     end
   end

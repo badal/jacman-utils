@@ -81,7 +81,7 @@ module JacintheManagement
 
       # show the client files directory
       def self.show_client_files
-        Core::Utils.open_file(Core::Clients::TRANSFERT_CLIENT_SAGE_DIR)
+        JacintheManagement::Utils.open_file(Core::Clients::TRANSFERT_CLIENT_SAGE_DIR)
       end
 
       # send again pending client files
