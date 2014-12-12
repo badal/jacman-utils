@@ -9,9 +9,10 @@
 module JacintheManagement
   # subclass of File to manage sql sources
   class SqlScriptFile < ::File
-    # sql source files
-    # FIXME: should be configured
-    SQL_SCRIPT_DIR = File.join(File.dirname(__FILE__), '..', 'core', 'sql')
+    # Sql query files
+    SMF_SERVEUR = Conf.config['paths']['server']
+    SQL_SCRIPT_DIR = File.join(SMF_SERVEUR, 'Jacinthe', 'Tools', 'Library', 'SqlFiles')
+
     # pattern to be ignored
     SQL_SCRIPT_IGNORE_PATTERN = /^--|^\s*$/
 
