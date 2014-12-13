@@ -41,43 +41,6 @@ END_EPR_HELP
             -> { Electronic.push_ip_to_smf4server },
             EPR_HELP)
       end
-
-      EPN_HELP = <<END_EPN_HELP
-Cette commande permet d'envoyer aux nouveaux abonnés un mail
-de confirmation.
-
-Les modèles de mails se trouvent dans des fichiers
-'french_model_mail.txt' et 'english_model_mail.txt'.
-Ces fichiers se trouvent dans le dossier
-#{MODEL_DIR}.
-
-Les abonnés sans adresse mail sont enregstrés dans le fichier
-"#{File.join(DATADIR, 'tiers_sans_mail.csv')}".
-END_EPN_HELP
-
-      # @return [Command] notification new subscription by mail
-      def self.en
-        new('en', 'Notifier les abonnements',
-            ['Notifier par courriel',
-             'aux tiers concernés',
-             'leurs abonnements électroniques'],
-            -> { Notification.notify_all },
-            EPN_HELP)
-      end
-
-      ESI_HELP = <<END_ESI_HELP
-Cette commande permet d'ouvrir dans un éditeur
-la liste des plages ip invalides.
-END_ESI_HELP
-
-      # @return [Command] show invalid ip ranges
-      def self.ei
-        new('ei', 'Plages invalides',
-            ['Ouvrir dans un éditeur',
-             'la liste des plages invalides'],
-            -> { Electronic.show_invalid_ranges },
-            ESI_HELP)
-      end
     end
   end
 end
