@@ -86,8 +86,6 @@ module JacintheManagement
     end
   end
 end
-=begin
-=end
 
 if __FILE__ == $PROGRAM_NAME
 

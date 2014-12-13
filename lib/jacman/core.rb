@@ -57,8 +57,6 @@ module JacintheManagement
   end
 end
 
-
-
 require_relative('core/version.rb')
 
 require_relative('core/components/aspaway_importer.rb')
@@ -70,8 +68,6 @@ require_relative('core/components/defaults.rb')
 require_relative('core/components/drupal.rb')
 require_relative('core/components/electronic.rb')
 require_relative('core/components/mail.rb')
-require_relative('core/components/notification.rb')
-require_relative('core/components/notify.rb')
 require_relative('core/components/report.rb')
 require_relative('core/components/reset_db.rb')
 require_relative('core/components/sales.rb')

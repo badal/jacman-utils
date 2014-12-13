@@ -28,7 +28,7 @@ module JacintheManagement
             Core::Sales.remaining_sales_number,
             Clients.pending_client_files_number,
             Clients.clients_to_export_number,
-            Notification.notifications_number,
+            Notification::Base.notifications_number,
             Electronic.invalid_ranges.size,
             Notification.tiers_without_mail
           ]

@@ -6,7 +6,6 @@
 #
 # (c) Michel Demazure <michel@demazure.com>
 
-
 require_relative('utils/file_utilities.rb')
 require_relative('utils/config.rb')
 require_relative('utils/sql.rb')

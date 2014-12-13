@@ -1,4 +1,3 @@
-require './jacman/core.rb'
-JacintheManagement::Core::Cli.user.run(['en'])
+require './jacman/notifications.rb'
 
-JacintheManagement::Core::Notification.notify_all
+JacintheManagement::Notifications.notify_all

@@ -63,4 +63,3 @@ module JacintheManagement
     end
   end
 end
-
