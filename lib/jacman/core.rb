@@ -73,7 +73,7 @@ require_relative('core/components/reset_db.rb')
 require_relative('core/components/sales.rb')
 require_relative('core/components/transmission.rb')
 
-require_relative('core/components/info.rb')
+require_relative('core/components/infos.rb')
 
 require_relative('core/commands/command.rb')
 require_relative('core/commands/command_watcher.rb')

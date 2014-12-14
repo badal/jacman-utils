@@ -47,7 +47,7 @@ module JacintheManagement
     # @param [String] tables list of tables to be dumped, separated by spaces
     # @return [Array<String>] lines produced by the MYSQLDUMP command
     def self.dump(mode, tables)
-      temp_file = File.join(DATADIR, 'dump.temp')
+      temp_file = File.join(Core::DATADIR, 'dump.temp')
       Utils.delete_if_exists(temp_file)
       command = "#{MYSQLDUMP} #{SQL_DUMP_OPTIONS} -u#{mode[:user]} -p#{mode[:password]} \
       #{mode[:database]} #{tables} > #{temp_file} "
