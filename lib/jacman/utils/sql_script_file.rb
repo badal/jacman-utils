@@ -36,7 +36,7 @@ end
 if __FILE__ == $PROGRAM_NAME
 
   include JacintheManagement::Core
-  require_relative '../../core.rb'
+  require_relative '../../utils.rb'
   name = 'subscriptions_number_to_notify'
   puts SqlScriptFile.new(name).script
 

@@ -89,7 +89,7 @@ end
 
 if __FILE__ == $PROGRAM_NAME
 
-  require_relative('../core.rb')
+  require_relative('../utils.rb')
   include JacintheManagement
   sylk_file = File.join(TRANSFERT_DIR, 'DocVente', 'Test-export-vente.slk')
   csv_file = File.join(TRANSFERT_DIR, 'DocVente', 'Test-export.csv')

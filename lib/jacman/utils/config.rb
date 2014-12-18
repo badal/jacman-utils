@@ -27,7 +27,7 @@ module JacintheManagement
   fail "Le fichier de configuration n'existe pas" unless CONFIG_FILE
 
   # configuration methods
-  # Conf methods are only used only in core.rb
+  # Conf methods are only used only in utils.rb
   #    to build JacintheManagement::Core constants
   module Conf
     # fetch and cache configuration

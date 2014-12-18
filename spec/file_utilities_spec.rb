@@ -7,7 +7,7 @@
 # (c) Michel Demazure <michel@demazure.com>
 
 require_relative 'spec_helper.rb'
-require_relative '../lib/jacman/core/utils/file_utilities.rb'
+require_relative '../lib/jacman/utils/file_utilities.rb'
 
 include JacintheManagement::Core
 

@@ -7,7 +7,7 @@
 # (c) Michel Demazure & Kenji Lefevre
 
 module JacintheManagement
-  module Core
+  module Utils
     MAJOR = 2
     MINOR = 1
     TINY  = 1
@@ -18,6 +18,6 @@ end
 
 if __FILE__ == $PROGRAM_NAME
 
-  puts JacintheManagement::Core::VERSION
+  puts JacintheManagement::Utils::VERSION
 
 end

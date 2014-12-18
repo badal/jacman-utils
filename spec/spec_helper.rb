@@ -6,9 +6,10 @@
 #
 # (c) Michel Demazure <michel@demazure.com>
 
+gem 'minitest'
 require 'minitest/autorun'
 
-require_relative '../lib/jacman/core.rb'
+require_relative '../lib/jacman/utils.rb'
 
 include JacintheManagement
 
