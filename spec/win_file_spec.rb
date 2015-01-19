@@ -12,7 +12,6 @@ require_relative '../lib/jacman/utils/win_file.rb'
 include JacintheManagement
 
 describe WinFile do
-
   TEST_FILES = File.join(__FILE__, '..', 'test_files')
 
   it 'should be a WinFile' do
@@ -59,5 +58,4 @@ describe WinFile do
     size_diff = File.size(utf8_file) - File.size(win_converted)
     size_diff.must_equal 11
   end
-
 end

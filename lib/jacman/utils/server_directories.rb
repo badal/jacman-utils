@@ -30,9 +30,25 @@ module JacintheManagement
     # defaults_file
     DEFAULTS_FILE = Conf.config['paths']['defaults']
 
+    # SQL script files
+    SQL_SCRIPT_DIR = File.join(SMF_SERVEUR, 'Jacinthe', 'Tools', 'Library', 'SqlFiles')
+
     # model mail files
     MODEL_DIR = File.join(SMF_SERVEUR, 'Jacinthe', 'Tools', 'Templates', 'Mail')
     # mail smtp server
     MAIL_MODE = Conf.mail_mode
+
+    # defaults for batman
+    module Defaults
+      # @return [Hash] the defaults, memoized
+      def self.defaults
+        @defaults ||= load_defaults
+      end
+
+      # @return [Hash] the defaults, read from the file
+      def self.load_defaults
+        YAML.load_file(Core::DEFAULTS_FILE)
+      end
+    end
   end
 end

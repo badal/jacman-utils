@@ -12,7 +12,6 @@ require_relative '../lib/jacman/utils/file_utilities.rb'
 include JacintheManagement::Core
 
 describe Utils do
-
   it 'should extract with a simple regexp' do
     in_file = File.join(File.dirname(__FILE__),
                         'test_files', 'Articles.csv')

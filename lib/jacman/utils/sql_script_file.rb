@@ -9,16 +9,12 @@
 module JacintheManagement
   # subclass of File to manage sql sources
   class SqlScriptFile < ::File
-    # Sql query files
-    SMF_SERVEUR = Conf.config['paths']['server']
-    SQL_SCRIPT_DIR = File.join(SMF_SERVEUR, 'Jacinthe', 'Tools', 'Library', 'SqlFiles')
-
     # pattern to be ignored
     SQL_SCRIPT_IGNORE_PATTERN = /^--|^\s*$/
 
     # @param [String] name base name of file (without .sql)
     def initialize(name)
-      file_name = File.join(SQL_SCRIPT_DIR, "#{name}.sql")
+      file_name = File.join(Core::SQL_SCRIPT_DIR, "#{name}.sql")
       super(file_name, 'r:utf-8')
     end
 
@@ -31,13 +27,4 @@ module JacintheManagement
         .gsub(/\s+/, ' ')
     end
   end
-end
-
-if __FILE__ == $PROGRAM_NAME
-
-  include JacintheManagement::Core
-  require_relative '../../utils.rb'
-  name = 'subscriptions_number_to_notify'
-  puts SqlScriptFile.new(name).script
-
 end
