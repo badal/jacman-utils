@@ -87,7 +87,7 @@ module JacintheManagement
     # @param [Path] file file to load
     # @param [String] sql end of sql command "INTO ..."
     def self.load_file(mode, file, sql)
-      command = "LOAD DATA LOCAL INFILE '#{file}' IGNORE " + sql
+      command = "LOAD DATA LOCAL INFILE '#{file}' REPLACE " + sql
       Sql.pipe_command(mode, command)
     end
   end

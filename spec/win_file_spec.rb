@@ -51,6 +51,15 @@ describe WinFile do
     size_diff.must_equal 33
   end
 
+  it 'should convert to utf-8 and normalize numbers' do
+    win_file = File.join(TEST_FILES, 'Tarifs.csv')
+    utf8_converted = File.join(TEST_FILES, 'Tarifs_converted.csv')
+    utf8_correct = File.join(TEST_FILES, 'Tarifs_utf8_correct.csv')
+    WinFile.convert_to_unicode(win_file, utf8_converted)
+    File.read(utf8_converted).must_equal(File.read(utf8_correct))
+  end
+
+
   it 'should convert from utf_8 to win' do
     utf8_file = File.join(TEST_FILES, 'Test_utf8_n.txt')
     win_converted = File.join(TEST_FILES, 'Test_win_prod.txt')

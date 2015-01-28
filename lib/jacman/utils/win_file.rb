@@ -74,13 +74,15 @@ module JacintheManagement
       end
     end
 
+    PAT = Regexp.new('(\d+),(\d\d)0*')
+
     # convert to utf-8
     # @param [Path] utf8_file converted utf-8 file
     # @param [Path] win_file Windows encoded file to be converted
     def self.convert_to_unicode(win_file, utf8_file)
       File.open(utf8_file, 'w:utf-8') do |file|
         WinFile.readlines(win_file).each do |line|
-          file.puts line
+          file.puts line.gsub(PAT, '\1.\2')
         end
       end
     end
