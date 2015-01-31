@@ -82,12 +82,14 @@ module JacintheManagement
       filter_and_load(in_file, extracted_file, mode, regexp, sql, &blok)
     end
 
+    # WARNING: DO NOT CHANGE  'IGNORE'  FOR  'REPLACE' !!!!
+    #
     # Utility to "LOAD DATA LOCAL INFILE"
     # @param [Hash] mode connecting mode
     # @param [Path] file file to load
     # @param [String] sql end of sql command "INTO ..."
     def self.load_file(mode, file, sql)
-      command = "LOAD DATA LOCAL INFILE '#{file}' REPLACE " + sql
+      command = "LOAD DATA LOCAL INFILE '#{file}' IGNORE " + sql
       Sql.pipe_command(mode, command)
     end
   end
