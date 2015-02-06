@@ -74,9 +74,11 @@ module JacintheManagement
       end
     end
 
+    # pattern for fixing numbers with more than two decimals
     PAT = Regexp.new('(\d+),(\d\d)0*')
 
     # convert to utf-8
+    # and normalize decimal numbers to <=2 decimals
     # @param [Path] utf8_file converted utf-8 file
     # @param [Path] win_file Windows encoded file to be converted
     def self.convert_to_unicode(win_file, utf8_file)

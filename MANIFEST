@@ -2,8 +2,9 @@
 lib/jacman/utils/config.rb
 lib/jacman/utils/file_utilities.rb
 lib/jacman/utils/server_directories.rb
+lib/jacman/utils/smf_mail.rb
 lib/jacman/utils/sql.rb
-lib/jacman/utils/sql_script_file.rb
+lib/jacman/utils/sql_files.rb
 lib/jacman/utils/sql_tools.rb
 lib/jacman/utils/sylk2csv.rb
 lib/jacman/utils/version.rb
@@ -22,6 +23,9 @@ spec/test_files/Stock_pc.txt
 spec/test_files/Stock_sage_prod.txt
 spec/test_files/Stock_utf8.txt
 spec/test_files/Stock_utf8_prod.txt
+spec/test_files/Tarifs.csv
+spec/test_files/Tarifs_converted.csv
+spec/test_files/Tarifs_utf8_correct.csv
 spec/test_files/Test_utf8_n.txt
 spec/test_files/Test_utf8_prod.txt
 spec/test_files/Test_win_prod.txt

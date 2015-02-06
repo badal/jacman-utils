@@ -4,10 +4,11 @@
   Base tools for all JacMan components
 
 ## Version
-  2.1
+  2.3
 
 ## Configuration
-  YAML File, path to be given in ENV['JACMAN_CONFIG']
+  * config YAML File, path to be given in ENV['JACMAN_CONFIG']
+  * this file contains path to default file
 
 ## Files
   See MANIFEST

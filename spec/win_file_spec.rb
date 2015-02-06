@@ -59,7 +59,6 @@ describe WinFile do
     File.read(utf8_converted).must_equal(File.read(utf8_correct))
   end
 
-
   it 'should convert from utf_8 to win' do
     utf8_file = File.join(TEST_FILES, 'Test_utf8_n.txt')
     win_converted = File.join(TEST_FILES, 'Test_win_prod.txt')

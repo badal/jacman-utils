@@ -17,22 +17,22 @@ module JacintheManagement
       MAIL_MODE = Conf.mail_mode
       MAIL_MODE[:from] = Core::Defaults.defaults[:from]
 
-      # @param [String] message content of mail
+      # @param [String] message message of mail
       # @param [Array<String>] dest destination addresses
       # @param [String] subject subject of mail
-      def initialize(dest, subject, content)
+      def initialize(dest, subject, message)
         super()
-        add_content(content)
+        add_content(message)
         self.to = Array(dest).join(',')
         self.from = MAIL_MODE[:from]
         self.subject = subject
       end
 
-      # @param [String] content content in utf-8
-      def add_content(content)
+      # @param [String] message content message in utf-8
+      def add_content(message)
         part = ::Mail::Part.new
         part.content_type = 'text/plain; charset=UTF-8'
-        part.body = content
+        part.body = message
         add_part part
       end
 
@@ -41,11 +41,10 @@ module JacintheManagement
         deliver!
       end
 
-      # useless, for compatibility
+      # for compatibility
       def demo
         to_s
       end
     end
   end
 end
-
