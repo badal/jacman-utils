@@ -75,8 +75,13 @@ module JacintheManagement
         TYPES.index(info[:type]) || 0
       end
 
-      # @return [Bool] whether type is 'requete'
+      # @return [Bool] whether type is 'requete' or 'commande'
       def executable?
+        info[:type] == TYPES[1] || info[:type] == TYPES[2]
+      end
+
+      # @return [Bool] whether type is 'requete'
+      def query?
         info[:type] == TYPES[1]
       end
 

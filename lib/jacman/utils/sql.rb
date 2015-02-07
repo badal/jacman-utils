@@ -16,6 +16,7 @@ module JacintheManagement
   # databases
   JACINTHE_DATABASE = Conf.config['databases']['jacinthe']
   CATALOG_DATABASE = Conf.config['databases']['catalog']
+  CLONE_DATABASE = 'clone'
 
   # connection modes
   ADMIN_MODE = Conf.admin_mode
@@ -23,6 +24,7 @@ module JacintheManagement
   ROOT_MODE = Conf.root_mode
   JACINTHE_ROOT_MODE = Conf.root_mode.merge(database: JACINTHE_DATABASE)
   CATALOG_MODE = Conf.admin_mode.merge(database: CATALOG_DATABASE)
+  CLONE_MODE = Conf.admin_mode.merge(database: CLONE_DATABASE)
 
   # encapsulating mysql client methods
   module Sql
