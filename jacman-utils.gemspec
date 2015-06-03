@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github/badal/jacman-core'
   s.require_paths = ['lib']
   s.summary = 'Core methods for Jacinthe DB management tools'
+  s.license = 'MIT'
 
   s.add_development_dependency('rake', ['>= 0'])
   s.add_development_dependency('yard', ['>= 0'])
