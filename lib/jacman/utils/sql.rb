@@ -48,6 +48,7 @@ module JacintheManagement
     # @param [Hash] mode connecting mode
     # @param [String] query query to be sent
     # @return [Array<String>] answer
+    # @param [param] param addendum to query
     def self.answer_to_query(mode, query, param = '')
       open "|#{sql(mode)} -e \"#{query}\" #{param}" do |pipe|
         pipe.readlines.map { |line| line.force_encoding('utf-8') }

@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.summary = 'Core methods for Jacinthe DB management tools'
   s.license = 'MIT'
 
+  s.add_dependency('mail', ['>=0'])
+
   s.add_development_dependency('rake', ['>= 0'])
   s.add_development_dependency('yard', ['>= 0'])
   s.add_development_dependency('minitest', ['>= 0'])

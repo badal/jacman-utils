@@ -26,6 +26,19 @@ module JacintheManagement
     # possible values of type
     TYPES = %w(Inconnu Requête Commande Fragment)
 
+    # pattern for comments and empty lines
+    SQL_SCRIPT_IGNORE_PATTERN = /^--|^\s*$/
+
+    # @param [Array<String>] content content of a SQL source file
+    # @return [String] query cleaned from comments, empty lines  and extra spaces
+    def self.clean(content)
+      content.lines
+          .reject { |line| /^--/.match(line) }
+          .map(&:chomp)
+          .join(' ')
+          .gsub(/\s+/, ' ')
+    end
+
     # @param [String] name basename of file (without .sql)
     # @return [String] SQL query from file
     def self.script(name)
@@ -34,9 +47,6 @@ module JacintheManagement
 
     # SQl source files
     class Source
-      # pattern to be ignored
-      SQL_SCRIPT_IGNORE_PATTERN = /^--|^\s*$/
-
       # @return [Array] base_names (without .sql) of all script files
       def self.all
         Dir.glob(Core::SQL_SCRIPT_DIR + '/**/*.sql').map do |path|
@@ -55,13 +65,9 @@ module JacintheManagement
         @info = nil
       end
 
-      # @return [String] SQL query from file
+      # @return [String] SQL query extracted from file
       def script
-        @content.lines
-          .reject { |line| SQL_SCRIPT_IGNORE_PATTERN.match(line) } # comments and empty lines
-          .map(&:chomp)
-          .join(' ')
-          .gsub(/\s+/, ' ')
+        SQLFiles.clean(@content)
       end
 
       # fetch and cache file infos
