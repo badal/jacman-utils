@@ -16,8 +16,4 @@ module JacintheManagement
   end
 end
 
-if __FILE__ == $PROGRAM_NAME
-
-  puts JacintheManagement::Utils::VERSION
-
-end
+puts JacintheManagement::Utils::VERSION if __FILE__ == $PROGRAM_NAME

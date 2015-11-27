@@ -45,7 +45,7 @@ module Sylk
     # @return [String] CSV value
     def self.standard_value(val)
       val.chomp!
-      NUM_REGEXP =~ val ? Float(val) : val.gsub(/"/, '')
+      NUM_REGEXP =~ val ? Float(val) : val.delete('"')
     end
 
     # @param [Enumerator] enum enumerator of Sylk lines

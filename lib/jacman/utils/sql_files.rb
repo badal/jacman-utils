@@ -33,10 +33,10 @@ module JacintheManagement
     # @return [String] query cleaned from comments, empty lines  and extra spaces
     def self.clean(content)
       content.lines
-          .reject { |line| /^--/.match(line) }
-          .map(&:chomp)
-          .join(' ')
-          .gsub(/\s+/, ' ')
+        .reject { |line| /^--/.match(line) }
+        .map(&:chomp)
+        .join(' ')
+        .gsub(/\s+/, ' ')
     end
 
     # @param [String] name basename of file (without .sql)
