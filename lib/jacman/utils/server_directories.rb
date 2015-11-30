@@ -33,6 +33,9 @@ module JacintheManagement
     # SQL script files
     SQL_SCRIPT_DIR = File.join(SMF_SERVEUR, 'Jacinthe', 'Tools', 'Library', 'SqlFiles')
 
+    # help files for tools
+    HELP_DIR = File.join(SMF_SERVEUR, 'Jacinthe', 'Tools', 'Library', 'HelpFiles')
+
     # model mail files
     MODEL_DIR = File.join(SMF_SERVEUR, 'Jacinthe', 'Tools', 'Templates', 'Mail')
     # mail smtp server
